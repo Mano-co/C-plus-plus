@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int> binary;
+    int dec,quotient=0;
+    cout<<"Enter a decimal number:";
+    cin>>dec;
+    while(dec!=0)
+    {
+        quotient=dec%2;
+        binary.push_back(quotient);
+        dec=dec/2;
+    }
+    for(int i=binary.size();i>=0;i--)
+    {
+        cout<<binary[i];
+    }
+}
