@@ -1,0 +1,67 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    vector<int> arr;
+    int num;
+    vector<int> max;
+    vector<int> min;
+    vector<vector<int>> rem;
+    vector<int> o;
+    int output=0;
+    int rema;
+    for(int i=0;i<3;i++)
+    {
+        cout<<"Enter a four digit number:";
+        cin>>num;
+        arr.push_back(num);
+    }
+    for(int i=0;i<3;i++)
+    {
+        vector<int> row;
+        while(arr[i]>0)
+        {
+        rema=arr[i]%10;
+        row.push_back(rema);
+        arr[i]=arr[i]/10;
+        }
+        rem.push_back(row);
+    }
+    int row=rem.size();
+    int col=rem[0].size();
+    for(int i=0;i<row;i++)
+    {
+    sort(rem[i].begin(),rem[i].end());
+    }
+    for(int i=0;i<3;i++)
+    {
+        max.push_back(rem[i][col-1]);
+        min.push_back(rem[i][0]);
+    }
+    for(int i=0;i<3;i++)
+    {
+        cout<<max[i]<<"   "<<min[i]<<endl;
+    }
+    for(int i=0;i<3;i++)
+    {
+        o.push_back(max[i]-min[i]);
+    }
+    for(int i=0;i<3;i++)
+    {
+        output+=o[i];
+    }
+    cout<<output;
+    // for(int i=0;i<3;i++)
+    // {
+    //     cout<<max[i]<<"   "<<min[i]<<endl;
+    // }
+    // for(int i=0;i<3;i++)
+    // {
+    // for(int j=0;j<4;j++)
+    // {
+    //     cout<<rem[i][j]<<endl;
+    // }
+    // }
+}
