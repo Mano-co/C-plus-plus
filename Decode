@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+int main()
+{
+    int count=0;
+    vector<int> arr;
+    string ones;
+    cout<<"Enter the sequence:";
+    cin>>ones;
+    for(int i=0;i<ones.length();i++)
+    {
+        // cout<<x;
+        if(ones[i]=='1')
+        {
+            count++;
+        }
+        else
+        {
+            if(count>0)
+            {
+                arr.push_back(count);
+            }
+            count=0;
+        }
+    }
+    if(count>0)
+    {
+        arr.push_back(count);
+    }
+    string word="";
+    for(int i=0;i<arr.size();i++)
+    {
+        if(arr[i]>=1 && arr[i]<=26)
+        {
+            word+=('A'+arr[i]-1);
+        }
+    }
+    cout<<word;
+}
