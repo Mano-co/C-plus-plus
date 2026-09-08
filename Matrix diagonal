@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,primary=0,secondary=0,total=0;
+    cout<<"Enter the value of square matrix:";
+    cin>>n;
+    int mat[n][n];
+    cout<<"Enter the matrix:";
+    for(int i=0;i<n;i++)
+    {
+    for(int j=0;j<n;j++)
+    {
+    cin>>mat[i][j];    
+    }
+    cout<<endl;
+    } 
+    for(int i=0;i<n;i++)
+    {
+        primary+=mat[i][i];
+        secondary+=mat[i][n-1-i];
+    }
+    total=primary+secondary-mat[n/2][n/2];
+    cout<<total;
+}
