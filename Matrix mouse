@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int m,n,d,count,c,r;
+ cout<<"Give me the matrix row and column:";
+ cin>>m>>n;
+ cout<<"Give me the direction:";
+ cin>>d;
+ cout<<"Give me the location of the mouse with rows and columns:";
+ cin>>r>>c;
+ cout<<"Give me the iteration to happen:";
+ cin>>iteration;
+ int mat[m][n];
+ cout<<"Enter the values to be imprint in the matrix:";
+ for(int i=0;i<m;i++)
+ {
+     for(int j=0;j<n;j++)
+     {
+        cin>>mat[i][j];
+     }
+ }
+ if(d==1){
+ if(mat[r][c]==0)
+ {
+     d+=1;
+     mat[r][c]==1;
+     
+ }
+ }
+ for(int i=0;i<m;i++)
+ {
+     for(int j=0;j<n;j++)
+     {
+        cout<<mat[i][j]<<" ";
+     }
+     cout<<endl;
+ }
+}
