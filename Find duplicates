@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+#include<list>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter the no of elements:";
+    cin>>n;
+    int temp,total=0;
+    total=(n*(n+1))/2;
+    vector<int> arr;
+    list<int> duplicate;
+    for(int i=0;i<n;i++)
+    {
+        cout<<"Enter the element in the index "<<"("<<i+1<<")"<<": ";
+        cin>>temp;
+        arr.push_back(temp);
+    }
+    for(int i=0;i<arr.size();i++)
+    {
+        for(int j=i+1;j<arr.size();j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                duplicate.push_back(arr[j]);
+            }
+        }
+    }
+    for(auto i=duplicate.begin();i!=duplicate.end();i++)
+    {
+        cout<<*i<<" ";
+    }
+    return 0;
+}
