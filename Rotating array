@@ -1,0 +1,56 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int n,key,index;
+    cout<<"Enter the no of Elements to be filled: ";
+    cin>>n;
+    cout<<"Enter the key:";
+    cin>>key;
+    int ele;
+    vector<int> arr;
+    for(int i=0;i<n;i++)
+    {
+        cout<<"Enter the element in the index "<<"("<<i<<")"<<": ";
+        cin>>ele;
+        arr.push_back(ele);
+    }
+    cout<<"Original array: ";
+    for(int i=0;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    char shift;
+    cout<<"Enter the letter 'l' to swift left and 'r' to swift right:";
+    cin>>shift;
+    switch (shift)
+    {
+        case 'l':
+    index=(n-(key%n))%n;
+    cout<<"After rotation: ";
+    for(int i=index;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    for(int i=0;i<index;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    break;
+    case 'r':
+    index=key%n;
+    cout<<"After rotation: ";
+    for(int i=index;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    for(int i=0;i<index;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    break;
+    }
+    return 0;
+}
